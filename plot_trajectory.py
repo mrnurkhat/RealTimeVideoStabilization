@@ -9,15 +9,15 @@ class PlotTrajectory:
             self.raw = {"x": [], "y": [], "a": []}
             self.smooth = {"x": [], "y": [], "a": []}
 
-    def collect(self, xRaw, yRaw, aRaw, xSmooth, ySmooth, aSmooth):
+    def collect(self, x_raw, y_raw, a_raw, x_smooth, y_smooth, a_smooth):
         if not self.enabled:
             return
-        self.raw["x"].append(xRaw)
-        self.raw["y"].append(yRaw)
-        self.raw["a"].append(aRaw)
-        self.smooth["x"].append(xSmooth)
-        self.smooth["y"].append(ySmooth)
-        self.smooth["a"].append(aSmooth)
+        self.raw["x"].append(x_raw)
+        self.raw["y"].append(y_raw)
+        self.raw["a"].append(a_raw)
+        self.smooth["x"].append(x_smooth)
+        self.smooth["y"].append(y_smooth)
+        self.smooth["a"].append(a_smooth)
 
     def display(self):
         if not self.enabled:
@@ -25,7 +25,7 @@ class PlotTrajectory:
         keys = ["x", "y", "a"]
         labels = ["X", "Y", "Angle (°)"]
         fig, axs = plt.subplots(len(keys), 1, figsize=(10, 8), sharex=True)
-        fig.suptitle("Camera Trajectories (Raw vs Smoothed)", fontsize=14)
+        fig.suptitle("Camera Trajectories (Raw vs Smoothed)", fontsize=12)
 
         for i, key in enumerate(keys):
             raw_data = self.raw[key]

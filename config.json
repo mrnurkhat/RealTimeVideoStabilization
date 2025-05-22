@@ -4,6 +4,16 @@
   "resolution": [640, 480],
   "fps": 24,
   "video_path": "Videos/IV_shakyTrain.mp4",
-  "showTrajectory": false,
-  "show_combined_IO": true
+
+  "crop_frame": true,
+  "show_trajectory": false,
+  "show_combined_IO": false,
+
+  "static_threshold": 2.0,
+  "max_horizontal_translation_ratio": 0.15,
+  "max_vertical_translation_ratio": 0.10,
+  "max_rotation_degree": 10,
+
+  "kalman_Q": 1e-5,
+  "kalman_R": 10e-2
 }
