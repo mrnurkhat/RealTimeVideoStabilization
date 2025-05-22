@@ -1,0 +1,9 @@
+{
+  "input_source": "video",
+  "camera_backend": "cv2",
+  "resolution": [640, 480],
+  "fps": 24,
+  "video_path": "Videos/IV_shakyTrain.mp4",
+  "showTrajectory": false,
+  "show_combined_IO": true
+}
