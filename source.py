@@ -4,7 +4,7 @@ from utils import IS_WINDOWS
 
 # Import Picamera2 only if not running on Windows
 if not IS_WINDOWS:
-    from picamera2 import Picamera2
+    Picamera2 = None#from picamera2 import Picamera2
 else:
     Picamera2 = None
 

@@ -1,5 +1,6 @@
 {
   "show_combined": true,
+  "display_output": true,
   "source_of_frames": "video",
   "input_video_path": "Videos/shakyTrain.mp4",
   "plot_trajectory": true,
