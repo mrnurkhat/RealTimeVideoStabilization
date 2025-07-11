@@ -1,15 +1,9 @@
 {
   "show_combined": true,
-  "display_output": true,
   "source_of_frames": "video",
   "input_video_path": "Videos/shakyTrain.mp4",
-  "plot_trajectory": true,
   "kamlan_Q": 1e-1,
   "kalman_R": 8,
-  "save_output_video_to": "Videos/stableTrain.mp4",
-  "crop_result": false,
-  "margin_x": 50,
-  "margin_y": 60,
   "max_horizontal_shift": 1000,
   "max_vertical_shift": 1000,
   "max_rotation": 90
