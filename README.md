@@ -16,14 +16,13 @@ In addition to the core stabilization module, helper components provide:
 The program behavior is controlled by a configuration file config.json. This allows the user to adjust performance, precision, and visual output without changing the source code — making the pipeline flexible and easy to adapt to different scenarios and hardware platforms.
 
 **Input Settings**
-
-Parameters for PiCamera2 are relevant only on non-Windows platform and when source_of_frames = "camera".
 | Parameter              | Description                                                            | Default      |
 | ---------------------- | ---------------------------------------------------------------------- | ------------ |
 | `source_of_frames`     | Input source: `"camera"` or `"video"`                                  | `"camera"`   |
 | `input_video_path`     | Path to input video file (required if `source_of_frames` is `"video"`) | `null`       |
 | `picamera2_resolution` | Resolution when using PiCamera2                                        | `[640, 360]` |
 | `picamera2_fps`        | Frames per second for PiCamera2                                        | `24`         |
+Parameters for PiCamera2 are relevant only on non-Windows platform and when source_of_frames = "camera".
 
 **Display Options**
 | Parameter         | Description                                      | Default |
@@ -62,3 +61,7 @@ The software was developed and tested on:
 * A laptop running Windows
 * Raspberry Pi 4B running Linux (lib Picamera)
 This ensures cross-platform compatibility for both desktop and embedded devices.
+
+### License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
