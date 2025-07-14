@@ -97,11 +97,19 @@ cd RealTimeVideoStabilization
 ```
 
 Install dependencies:
+
 ```
 pip install -r requirements.txt
 ```
 
+If you plan to run the project on a Raspberry Pi, additionally install the PiCamera2 dependency:
+
+```
+pip install -r requirements-pi.txt
+```
+
 Run the stabilizer:
+
 ```
 python main.py
 ```
