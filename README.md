@@ -1,7 +1,16 @@
 # Real-Time Video Stabilization
 A real-time video stabilization algorithm optimized for the Raspberry Pi 4B platform. Enables smooth video capture during recording without the need for additional hardware such as mechanical or optical stabilizers.
 
-**Demo Video**: Watch a short demo of the stabilization in action on YouTube.
+The input video `Videos/shakyTrain.mp4` has a resolution of 360p at 25 FPS.  
+On a Raspberry Pi 4B with 8 GB RAM, the stabilizer processes the video with an average framerate of **~25 FPS** when output display (before/after comparison) is enabled.
+
+This demonstrates real-time performance capability on embedded hardware.
+
+**Demo Video**: Watch a short demo of the stabilization in action on [YouTube]([https://youtu.be/tQVh7EWDGOI?si=5MEIVjK4Fql8ST39]).
+
+This project is part of my bachelor thesis. 
+You can read the full thesis (in czecj) on the university website:  
+[Video Stabilization on Raspberry Pi]([https://www.vut.cz/studenti/zav-prace/detail/167444])
 
 ### About the Algorithm
 The implemented algorithm is based on motion estimation using ORB keypoint matching, RANSAC filtering, and trajectory smoothing using a Kalman filter. It assumes a 2D affine motion model, which allows stabilization of horizontal and vertical translations, and rotation around the Z-axis in the image plane.
