@@ -1,6 +1,7 @@
 # Real-Time Video Stabilization
 A real-time video stabilization algorithm optimized for the Raspberry Pi 4B platform. Enables smooth video capture during recording without the need for additional hardware such as mechanical or optical stabilizers.
 
+**Demo Video**: Watch a short demo of the stabilization in action on YouTube.
 
 ### About the Algorithm
 The implemented algorithm is based on motion estimation using ORB keypoint matching, RANSAC filtering, and trajectory smoothing using a Kalman filter. It assumes a 2D affine motion model, which allows stabilization of horizontal and vertical translations, and rotation around the Z-axis in the image plane.
@@ -11,6 +12,31 @@ The system is designed following principles of modularity and object-oriented pr
 In addition to the core stabilization module, helper components provide:
 * a flexible configuration API (via config.json),
 * control over algorithm parameters and processing modes.
+
+### Project Structure
+RealTimeVideoStabilization/
+├── run.py               # Entry point of the program
+├── config.json          # Main configuration file for the stabilization pipeline
+├── source.py            # Handles input source selection: camera or video file
+├── logger.py            # Logging and performance measurement utilities
+├── visualizer.py        # Real-time display and trajectory plotting tools
+├── utils/               # Auxiliary utilities (e.g., image transformations)
+│
+├── stabilizer/          # Core stabilization logic (modular algorithm components)
+│   ├── __init__.py
+│   ├── estimator.py     # Motion estimation using keypoints and RANSAC
+│   ├── frame_features.py# ORB feature detection and matching
+│   ├── smoother.py      # Kalman filter or alternative smoothing
+│   ├── transform.py     # Affine transform building and limiting
+│
+├── Videos/              # Sample input videos (e.g., shaky footage for testing)
+│   ├── .gitkeep         # Keeps the folder in Git (if empty)
+│   ├── shakyTrain.mp4   # Example shaky input video
+│
+├── .gitignore           # Files and folders to exclude from Git tracking
+├── LICENSE              # Project license (MIT)
+└── README.md            # Project documentation
+
 
 ### Configuration
 The program behavior is controlled by a configuration file config.json. This allows the user to adjust performance, precision, and visual output without changing the source code — making the pipeline flexible and easy to adapt to different scenarios and hardware platforms.
@@ -80,6 +106,7 @@ python main.py
 ```
 
 **Note for Non-Windows Users**
+
 If you are running this code on a non-Windows system (e.g. Linux or macOS), and do not use a Raspberry Pi camera, you need to manually disable the PiCamera2 module to avoid import errors.
 
 Please modify the file source.py as follows:
