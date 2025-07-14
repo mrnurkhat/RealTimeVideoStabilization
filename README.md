@@ -14,6 +14,7 @@ In addition to the core stabilization module, helper components provide:
 * control over algorithm parameters and processing modes.
 
 ### Project Structure
+```
 RealTimeVideoStabilization/
 ├── run.py               # Entry point of the program
 ├── config.json          # Main configuration file for the stabilization pipeline
@@ -36,7 +37,7 @@ RealTimeVideoStabilization/
 ├── .gitignore           # Files and folders to exclude from Git tracking
 ├── LICENSE              # Project license (MIT)
 └── README.md            # Project documentation
-
+```
 
 ### Configuration
 The program behavior is controlled by a configuration file config.json. This allows the user to adjust performance, precision, and visual output without changing the source code — making the pipeline flexible and easy to adapt to different scenarios and hardware platforms.
