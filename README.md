@@ -22,6 +22,7 @@ The program behavior is controlled by a configuration file config.json. This all
 | `input_video_path`     | Path to input video file (required if `source_of_frames` is `"video"`) | `null`       |
 | `picamera2_resolution` | Resolution when using PiCamera2                                        | `[640, 360]` |
 | `picamera2_fps`        | Frames per second for PiCamera2                                        | `24`         |
+
 Parameters for PiCamera2 are relevant only on non-Windows platform and when source_of_frames = "camera".
 
 **Display Options**
@@ -55,12 +56,43 @@ Parameters for PiCamera2 are relevant only on non-Windows platform and when sour
 | `save_output_video_to` | Path to save the output stabilized video           | `null`  |
 | `output_video_fps`     | Frame rate of the output video                     | `25`    |
 
-
 ### Platform Support
 The software was developed and tested on:
 * A laptop running Windows
 * Raspberry Pi 4B running Linux (lib Picamera)
 This ensures cross-platform compatibility for both desktop and embedded devices.
+
+### Running the Project
+Clone the repository:
+```
+git clone https://github.com/mrnurkhat/RealTimeVideoStabilization.git
+cd RealTimeVideoStabilization
+```
+
+Install dependencies:
+```
+pip install -r requirements.txt
+```
+
+Run the stabilizer:
+```
+python main.py
+```
+
+**Note for Non-Windows Users**
+If you are running this code on a non-Windows system (e.g. Linux or macOS), and do not use a Raspberry Pi camera, you need to manually disable the PiCamera2 module to avoid import errors.
+
+Please modify the file source.py as follows:
+
+Replace line 7:
+```
+from picamera2 import Picamera2
+```
+With:
+```
+Picamera2 = None
+```
+This ensures compatibility when running the code without PiCamera2 installed or supported.
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
