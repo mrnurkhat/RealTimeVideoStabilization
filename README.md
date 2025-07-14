@@ -16,6 +16,7 @@ In addition to the core stabilization module, helper components provide:
 The program behavior is controlled by a configuration file config.json. This allows the user to adjust performance, precision, and visual output without changing the source code — making the pipeline flexible and easy to adapt to different scenarios and hardware platforms.
 
 **Input Settings**
+
 Parameters for PiCamera2 are relevant only on non-Windows platform and when source_of_frames = "camera".
 | Parameter              | Description                                                            | Default      |
 | ---------------------- | ---------------------------------------------------------------------- | ------------ |
