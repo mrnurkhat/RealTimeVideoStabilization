@@ -1,6 +1,7 @@
 # Real-Time Video Stabilization
 A real-time video stabilization algorithm optimized for the Raspberry Pi 4B platform. Enables smooth video capture during recording without the need for additional hardware such as mechanical or optical stabilizers.
 
+**Performance on Raspberry Pi 4B**
 The input video `Videos/shakyTrain.mp4` has a resolution of 360p at 25 FPS.  
 On a Raspberry Pi 4B with 8 GB RAM, the stabilizer processes the video with an average framerate of **~25 FPS** when output display (before/after comparison) is enabled.
 
