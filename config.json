@@ -3,8 +3,5 @@
   "source_of_frames": "video",
   "input_video_path": "Videos/shakyTrain.mp4",
   "kamlan_Q": 1e-1,
-  "kalman_R": 8,
-  "max_horizontal_shift": 1000,
-  "max_vertical_shift": 1000,
-  "max_rotation": 90
+  "kalman_R": 8
 }
