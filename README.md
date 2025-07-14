@@ -16,12 +16,44 @@ In addition to the core stabilization module, helper components provide:
 The program behavior is controlled by a configuration file config.json. This allows the user to adjust performance, precision, and visual output without changing the source code — making the pipeline flexible and easy to adapt to different scenarios and hardware platforms.
 
 **Input Settings**
+Parameters for PiCamera2 are relevant only on non-Windows platform and when source_of_frames = "camera".
 | Parameter              | Description                                                            | Default      |
 | ---------------------- | ---------------------------------------------------------------------- | ------------ |
 | `source_of_frames`     | Input source: `"camera"` or `"video"`                                  | `"camera"`   |
 | `input_video_path`     | Path to input video file (required if `source_of_frames` is `"video"`) | `null`       |
 | `picamera2_resolution` | Resolution when using PiCamera2                                        | `[640, 360]` |
 | `picamera2_fps`        | Frames per second for PiCamera2                                        | `24`         |
+
+**Display Options**
+| Parameter         | Description                                      | Default |
+| ----------------- | ------------------------------------------------ | ------- |
+| `display_output`  | Show output frames in real-time                  | `true`  |
+| `show_combined`   | Show original and stabilized frames side-by-side | `false` |
+| `crop_result`     | Enable cropping to remove border artifacts       | `false` |
+| `margin_x`        | Crop margin (left/right in pixels)               | `30`    |
+| `margin_y`        | Crop margin (top/bottom in pixels)               | `10`    |
+| `plot_trajectory` | Show estimated camera trajectory as a plot       | `false` |
+
+**Stabilization Parameters**
+| Parameter                | Description                                                          | Default |
+| ------------------------ | -------------------------------------------------------------------- | ------- |
+| `static_scene_threshold` | Threshold for detecting a static scene (0 disables detection)        | `0`     |
+| `max_feature_count`      | Maximum number of ORB keypoints to track per frame                   | `300`   |
+| `resize_ratio`           | Image downscale factor before feature detection (speed vs. accuracy) | `1.0`   |
+| `kalman_Q`               | Process noise variance in Kalman filter                              | `1e-5`  |
+| `kalman_R`               | Measurement noise variance in Kalman filter                          | `0.05`  |
+| `max_horizontal_shift`   | Maximum allowed horizontal correction shift (in px)                  | `1000`  |
+| `max_vertical_shift`     | Maximum allowed vertical correction shift (in px)                    | `1000`  |
+| `max_rotation`           | Maximum allowed rotational correction (in degrees)                   | `90`    |
+
+**Logging & Output**
+| Parameter              | Description                                        | Default |
+| ---------------------- | -------------------------------------------------- | ------- |
+| `log_message`          | Enable logging of internal messages                | `false` |
+| `measure_performance`  | Measure and log processing time per frame          | `false` |
+| `save_log_to`          | Path to save logs (if not set, logs are not saved) | `null`  |
+| `save_output_video_to` | Path to save the output stabilized video           | `null`  |
+| `output_video_fps`     | Frame rate of the output video                     | `25`    |
 
 
 ### Platform Support
