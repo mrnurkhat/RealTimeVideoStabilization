@@ -69,9 +69,9 @@ def load_and_validate_config(path):
     set_and_validate("kalman_Q", 1e-5, (int, float), lambda x: x > 0, "positive number")
     set_and_validate("kalman_R", 5e-2, (int, float), lambda x: x > 0, "positive number")
 
-    set_and_validate("max_horizontal_shift", 100, int, lambda x: x >= 0, "non-negative integer")
-    set_and_validate("max_vertical_shift", 100, int, lambda x: x >= 0, "non-negative integer")
-    set_and_validate("max_rotation", 45, int, lambda x: x >= 0, "non-negative integer")
+    set_and_validate("max_horizontal_shift", 1000, int, lambda x: x >= 0, "non-negative integer")
+    set_and_validate("max_vertical_shift", 1000, int, lambda x: x >= 0, "non-negative integer")
+    set_and_validate("max_rotation", 90, int, lambda x: x >= 0, "non-negative integer")
 
     # Validate logging and saving options
     set_and_validate("log_message", False, bool, description="boolean")
