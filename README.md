@@ -25,27 +25,30 @@ In addition to the core stabilization module, helper components provide:
 ### Project Structure
 ```
 RealTimeVideoStabilization/
-├── run.py               # Entry point of the program
-├── config.json          # Main configuration file for the stabilization pipeline
-├── source.py            # Handles input source selection: camera or video file
-├── logger.py            # Logging and performance measurement utilities
-├── visualizer.py        # Real-time display and trajectory plotting tools
-├── utils/               # Auxiliary utilities (e.g., image transformations)
+├── run.py                 # Entry point of the program and main pipline
+├── config.json            # Main configuration file for the stabilization pipeline
+├── source.py              # Handles input source selection: camera or video file
+├── logger.py              # Logging and performance measurement utilities
+├── visualizer.py          # Real-time display and trajectory plotting tools
+├── utils/                 # Auxiliary utilities
 │
-├── stabilizer/          # Core stabilization logic (modular algorithm components)
+├── stabilizer/            # Core stabilization logic (modular algorithm components)
 │   ├── __init__.py
-│   ├── estimator.py     # Motion estimation using keypoints and RANSAC
-│   ├── frame_features.py# ORB feature detection and matching
-│   ├── smoother.py      # Kalman filter or alternative smoothing
-│   ├── transform.py     # Affine transform building and limiting
+│   ├── estimator.py       # Motion estimation using keypoints and RANSAC
+│   ├── frame_features.py  # ORB feature detection and matching
+│   ├── smoother.py        # Kalman filter or alternative smoothing
+│   ├── transform.py       # Affine transform building and limiting
 │
-├── Videos/              # Sample input videos (e.g., shaky footage for testing)
-│   ├── .gitkeep         # Keeps the folder in Git (if empty)
-│   ├── shakyTrain.mp4   # Example shaky input video
+├── Videos/                # Sample input videos (e.g., shaky footage for testing)
+│   ├── .gitkeep           # Keeps the folder in Git (if empty)
+│   ├── shakyTrain.mp4     # Example shaky input video
 │
-├── .gitignore           # Files and folders to exclude from Git tracking
-├── LICENSE              # Project license (MIT)
-└── README.md            # Project documentation
+├── .gitignore             # Files and folders to exclude from Git tracking
+├── before_after_demo.gif  # Brief demonstration 
+├── requirements.txt       # Required dependencies
+├── requirements-pi.txt    # Additional dependencies for running on Raspberry Pi
+├── LICENSE                # Project license (MIT)
+└── README.md              # Project documentation
 ```
 
 ### Configuration
