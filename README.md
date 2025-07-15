@@ -10,8 +10,7 @@ Watch a short demo of the stabilization in action on [YouTube](https://youtu.be/
 ![Demo Video](before_after_demo.gif)
 
 This project is part of my bachelor thesis. 
-You can read the full thesis (in czech) on the university website:  
-[Video Stabilization on Raspberry Pi](https://www.vut.cz/studenti/zav-prace/detail/167444)
+You can read the full thesis (in czech) on the university website [Video Stabilization on Raspberry Pi](https://www.vut.cz/studenti/zav-prace/detail/167444)
 
 ### About the Algorithm
 The implemented algorithm is based on motion estimation using ORB keypoint matching, RANSAC filtering, and trajectory smoothing using a Kalman filter. It assumes a 2D affine motion model, which allows stabilization of horizontal and vertical translations, and rotation around the Z-axis in the image plane.
