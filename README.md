@@ -7,7 +7,9 @@ On a Raspberry Pi 4B with 8 GB RAM, the stabilizer processes the video with an a
 
 This demonstrates real-time performance capability on embedded hardware.
 
-![Demo Video](before_after_demo.gif): Watch a short demo of the stabilization in action on [YouTube](https://youtu.be/tQVh7EWDGOI?si=5MEIVjK4Fql8ST39).
+![Demo Video](before_after_demo.gif)
+
+ Watch a short demo of the stabilization in action on [YouTube](https://youtu.be/tQVh7EWDGOI?si=5MEIVjK4Fql8ST39).
 
 This project is part of my bachelor thesis. 
 You can read the full thesis (in czech) on the university website:  
